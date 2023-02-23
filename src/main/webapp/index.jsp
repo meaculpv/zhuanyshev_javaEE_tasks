@@ -1,3 +1,11 @@
+<%--
+    Создайте Web Application, в котором мы можем видеть список стдуентов и делать поиск по ним.
+    Создайте класс Students.java, который будет описывать студента.
+    Students.java: long id, String name, String surname, String group, int addmitedYear
+    Создайте геттеры и сеттеры для каждого поля
+    В главной странице у вас должен стоять список всех пользователей. Над ними поисковик
+    с выборкой, где в выборке по каким критериям будете делать поиск.
+--%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.example.lab01.db.Students" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -40,6 +48,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <!--Get list of student to show on the browser into table-->
                         <%
                             ArrayList<Students> students = (ArrayList<Students>) request.getAttribute("students");
 

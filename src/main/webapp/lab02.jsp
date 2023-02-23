@@ -1,3 +1,9 @@
+<%--
+    Add getAllCars(), getCar(), updateCar(), deleteCar() methods(add try/catch for all of them)
+    Create HomeServlet for main page and corresponding home.jsp file. In doGet file request getAllCars() method from DBManager.
+    In home.jsp file create form for adding new Car. Form should be handled by AddServlet by method post.  After, show all cars in db.
+    Create AddServlet, DeleteServlet, DetailsServlet and corresponding .jsp files.
+--%>
 <%@ page import="com.example.lab02.db.Car" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +17,7 @@
 <%@include file="WEB-INF/vendor/navbar.jsp"%>
 <div class="container">
     <div class="col-form-label-sm">
+        <%--Trigger post method in AddcarServlet to add a new car--%>
         <form action="/addCar" method="post">
             <div class="row">
                 <div class="col">
@@ -32,6 +39,7 @@
         </form>
     </div>
 
+    <%--Display all the cars in table--%>
     <div class="row mt-5">
         <div class="col-sm-12">
             <table class="table table-striped">
@@ -67,6 +75,7 @@
                         <%=car.getVolume()%>
                     </td>
                     <td>
+                        <%--Tirgger get method in DetailsServlet to show detail page--%>
                         <a href="/detailsCar?model=<%=car.getModel()%>" class="btn btn-secondary">Details</a>
                     </td>
                 </tr>
